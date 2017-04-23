@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ConstraintLayout"
+    tools:context="com.example.barry.myview.MainActivity">
+
+    <com.example.barry.myview.Fab
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@mipmap/tool"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!-- Overlay that dims the screen -->
+    <com.gordonwong.materialsheetfab.DimOverlayFrameLayout
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <!-- Circular reveal container for the sheet -->
+    <io.codetail.widget.RevealLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="end|bottom"
+        android:orientation="vertical">
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/fab_sheet"
+            android:layout_width="200dp"
+            app:cardCornerRadius="30dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Recording -->
+                <TextView
+                    android:id="@+id/paintcolor"
+                    style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
+                    android:drawableLeft="@mipmap/paintcolor"
+                    android:text="画笔颜色"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/paintsize"
+                    style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
+                    android:drawableLeft="@mipmap/paintweight"
+                    android:text="画笔粗细"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/clear"
+                    style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
+                    android:drawableLeft="@mipmap/clear"
+                    android:text="画布清空"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/save"
+                    style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
+                    android:drawableLeft="@mipmap/save"
+                    android:text="保存"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+    </io.codetail.widget.RevealLinearLayout>
+
+</android.support.constraint.ConstraintLayout>
